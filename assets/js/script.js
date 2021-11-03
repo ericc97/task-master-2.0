@@ -69,7 +69,7 @@ $("#task-form-modal .btn-primary").click(function() {
 
     // close modal
     $("#task-form-modal").modal("hide");
-
+    console.log(tasks);
     // save in tasks array
     tasks.toDo.push({
       text: taskText,
@@ -119,7 +119,8 @@ $(".list-group").on("blur", "textarea", function(){
       .closest(".list-group-item")
       .index();
 
-    // update task in array and re0save to localstorage
+    debugger;
+    // update task in array and re-save to localstorage
     tasks[status][index].text = text;
     saveTasks();
 
@@ -147,7 +148,7 @@ $(".list-group").on("click", "span", function (){
     
     // swap out elements
     $(this).replaceWith(dateInput);
-    
+    console.log (dateInput);
     // auto bring up calender
     dateInput.trigger("focus");
     
@@ -169,9 +170,10 @@ $(".list-group").on("blur", "input[type='text']", function () {
   var index = $(this)
     .closest(".list-group-item")
     .index();
-debugger;
+
   //update task in array and re-save to local storage
   tasks[status][index].date = date;
+
   saveTasks();
 
   // recreate span and insert in place of input element
