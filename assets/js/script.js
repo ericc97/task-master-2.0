@@ -13,6 +13,8 @@ var createTask = function(taskText, taskDate, taskList) {
   // append span and p element to parent li
   taskLi.append(taskSpan, taskP);
 
+  // check due date
+  auditTask(taskLi);
 
   // append to ul list on the page
   $("#list-" + taskList).append(taskLi);
@@ -45,6 +47,24 @@ var saveTasks = function() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 };
 
+var auditTask = function (taskEl) {
+  // get date from task element
+  var date = $(taskEl).find("span").text().trim();
+
+  // convert to moment object at 5:00pm
+  var time = moment(date, "l").set("hour", 17);
+
+  // remove any old classes from element
+  $(taskEl).removeClass("list-group-item-warning list-group-item-danger");
+
+  // apply new class if task is near/over due date
+  if (moment().isAfter(time)) {
+    $(taskEl).addClass("list-group-item-danger");
+  }
+  else if (Math.abs(moment().diff(time, "days")) <= 2) {
+    $(taskEl).addClass("list-group-item-warning");
+  }
+};
 // enable draggable/sortable feature to list-group elements
 $(".card .list-group").sortable({
   // allow dragging across lists
@@ -115,6 +135,11 @@ $("#trash").droppable({
     console.log(ui);
   }
   
+});
+
+$("#modalDueDate").datepicker({
+  // force user to select a future date
+  minDate:1
 });
 
 // modal was triggered
@@ -219,6 +244,15 @@ $(".list-group").on("click", "span", function (){
   // swap out elements
   $(this).replaceWith(dateInput);
   //console.log (dateInput);
+
+  //have pop up calender show
+  dateInput.datepicker({
+    minDates:1,
+    onClose: function(){
+      // when calender is closed, force a change a "change" event on the 'dateInput'
+      $(this).trigger("change");
+    }
+  });
   // auto bring up calender
   dateInput.trigger("focus");
     
@@ -254,6 +288,8 @@ $(".list-group").on("change", "input[type='text']", function () {
     // replace input with span element
     $(this).replaceWith(taskSpan);
 
+    // pass task's <li> element into auditTask() to check new due date
+    auditTask($(taskSpan).closest(".list-group-item"));
 });
  
 
