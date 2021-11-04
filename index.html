@@ -29,12 +29,11 @@
         <!-- todo start-->
         <div class="col-12 col-md-6 col-xl-3 mb-3">
           <div class="card">
-            <h4 class="card-header bg-dark text-light">
+            <h4 class="card-header bg-dark text-light d-flex align-items-center">
               To Do
             </h4>
             <ul id="list-toDo" class="list-group list-group-flush"> 
-              <li class="list-group-item">
-              </li>
+              
             </ul>
           </div>
         </div>
@@ -42,7 +41,7 @@
         <!-- in progress start-->
         <div class="col-12 col-md-6 col-xl-3 mb-3">
           <div class="card">
-            <h4 class="card-header bg-dark text-light">
+            <h4 class="card-header bg-dark text-light d-flex align-items-center">
               In Progress
             </h4>
             <ul id="list-inProgress" class="list-group list-group-flush">
@@ -53,7 +52,7 @@
         <!-- in review start-->
         <div class="col-12 col-md-6 col-xl-3 mb-3">
           <div class="card">
-            <h4 class="card-header bg-dark text-light">
+            <h4 class="card-header bg-dark text-light d-flex align-items-center">
               In Review
             </h4>
             <ul id="list-inReview" class="list-group list-group-flush">
@@ -64,21 +63,22 @@
         <!-- completed start-->
         <div class="col-12 col-md-6 col-xl-3 mb-32">
           <div class="card">
-            <h4 class="card-header bg-dark text-light">
+            <h4 class="card-header bg-dark text-light d-flex align-items-center">
               Completed
             </h4>
-            <ul id="list-completed" class="list-group list-group-flush">
+            <ul id="list-done" class="list-group list-group-flush">
             </ul>
           </div>
         </div>
         <!--completed end-->
       </div>
-      <div class="mt-auto" id="trash">
-        <div class="w-100 bg-danger p-3 text-center text-light display-4">
-          Drop Here to Remove a Task
+      <footer class="mt-auto" id="trash">
+        <div class="w-100 bg-danger p-3 text-center text-light display-4 bottom-trash">
+          <span class="oi oi-trash mx-auto mb-4"> </span>Drop Here to Remove a Task
         </div>
-      </div>
+      </footer>
     </main>
+  </div>
 
   <!-- Modal -->
   <div class="modal fade" id="task-form-modal" tabindex="-1" role="dialog" aria-labelledby="task-form-modal"
@@ -113,6 +113,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch@0.2.3/jquery.ui.touch-punch.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="./assets/js/script.js"></script>
