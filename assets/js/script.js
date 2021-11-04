@@ -86,7 +86,7 @@ $(".card .list-group").sortable({
     // trim down list's ID to match object property
     var arrName = $(this)
       .attr("id")
-      . replace("list", "");
+      .replace("list-", "");
 
     // update array on tasks object and save
     tasks[arrName] = tempArr;
@@ -183,7 +183,7 @@ $(".list-group").on("blur", "textarea", function(){
     var status = $(this)
       .closest(".list-group")
       .attr("id")
-      .replace("list-", " ");
+      .replace("list-", "");
     
     //get the task's position in the list of other li elements
     var index = $(this)
@@ -205,22 +205,22 @@ $(".list-group").on("blur", "textarea", function(){
 
 $(".list-group").on("click", "span", function (){
     
-    // get current text 
-    var date = $(this)
-      .text()
-      .trim();
+  // get current text 
+  var date = $(this)
+    .text()
+    .trim();
     
-    // create new input element
-    var dateInput = $("<input>")
-      .attr("type", "text")
-      .addClass("form-control")
-      .val(date);
+  // create new input element
+  var dateInput = $("<input>")
+    .attr("type", "text")
+    .addClass("form-control")
+    .val(date);
     
-    // swap out elements
-    $(this).replaceWith(dateInput);
-    //console.log (dateInput);
-    // auto bring up calender
-    dateInput.trigger("focus");
+  // swap out elements
+  $(this).replaceWith(dateInput);
+  //console.log (dateInput);
+  // auto bring up calender
+  dateInput.trigger("focus");
     
 });
 
@@ -233,7 +233,7 @@ $(".list-group").on("change", "input[type='text']", function () {
   var status = $(this)
     .closest(".list-group")
     .attr("id")
-    .replace("list-", " ");
+    .replace("list-", "");
 
   //get the task's position in the list of other li elements
   var index = $(this)
@@ -251,8 +251,8 @@ $(".list-group").on("change", "input[type='text']", function () {
     .text(date);
 
   
-  // replace input with span element
-  $(this).replaceWith(taskSpan);
+    // replace input with span element
+    $(this).replaceWith(taskSpan);
 
 });
  
