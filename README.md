@@ -8,7 +8,7 @@ The application may be used by anyone and everyone who wishes to produce a visua
 
 
 ### App Page Image 
-![Task Master Pro](./assets/imagestaskmasterpro.png "Task Master landing page")
+![Task Master Pro](./assets/images/taskmasterpro.png "Task Master landing page")
 
 
 ## Credits 
