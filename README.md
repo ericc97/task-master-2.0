@@ -6,11 +6,15 @@ A Task organization appplication that allows you to trade tasks with a included 
 
 The application may be used by anyone and everyone who wishes to produce a visual schedule of tasks that are to be completed. This app allows the user to easily view which task is the most important and is due the soonest.
 
+### Built with 
+HTML
+CSS
+Java Script
 
-### App Page Image 
+#### App Page Image 
 ![Task Master Pro](./assets/images/taskmasterpro.png "Task Master landing page")
 
 
-## Credits 
+##### Credits 
 
 Made by: Eric Coleman 
