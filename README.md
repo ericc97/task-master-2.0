@@ -8,4 +8,9 @@ The application may be used by anyone and everyone who wishes to produce a visua
 
 
 ### App Page Image 
+![Task Master Pro](./assets/imagestaskmasterpro.png "Task Master landing page")
 
+
+## Credits 
+
+Made by: Eric Coleman 
